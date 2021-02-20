@@ -14,25 +14,25 @@ import tienda.personas.Vendedor;
  * @author jpmazate
  */
 public class Mercado {
-    
+
     private Cliente cliente;
     private Vendedor vendedor;
     private Scanner scan = new Scanner(System.in);
-    
-    public void iniciarMercado(){
-        
+
+    public void iniciarMercado() {
+
         boolean salir = false;
         int opcion;
         do {
-            
+
             System.out.println("\nBIENVENIDO AL MERCADO \n");
             System.out.println("1.- Mostrar Productos del Vendedor");
             System.out.println("2.- Mostrar Productos que tiene el cliente");
             System.out.println("3.- Comprar producto");
             System.out.println("4.- Salir");
             opcion = scan.nextInt();
-            
-            switch(opcion){
+
+            switch (opcion) {
                 case 1:
                     mostrarVendedor();
                     break;
@@ -49,11 +49,9 @@ public class Mercado {
                     System.out.println("Opcion no valida, selecciona otra por favor");
                     break;
             }
-            
-            
-        } while (salir ==false);
-        
-        
+
+        } while (salir == false);
+
     }
 
     public Mercado(Cliente cliente, Vendedor vendedor) {
@@ -76,38 +74,32 @@ public class Mercado {
     public void setVendedor(Vendedor vendedor) {
         this.vendedor = vendedor;
     }
-    
-    public void comprarProducto(){
+
+    public void comprarProducto() {
         int numeroProducto;
-        boolean finalizado=false;
+        boolean finalizado = false;
         do {
-        System.out.println("Selecciona que producto quieres");
-        vendedor.mostrarProductos();
-        numeroProducto = scan.nextInt();
-        finalizado = vendedor.venderProducto(numeroProducto);
+            System.out.println("\nSelecciona que producto quieres:");
+            vendedor.mostrarProductos();
+            numeroProducto = scan.nextInt();
+            finalizado = vendedor.venderProducto(numeroProducto);
+            
+            if(finalizado){
+                cliente.agregarProducto(vendedor.getInventario()[numeroProducto]);   
+            }
         } while (finalizado == false);
-        cliente.agregarProducto(vendedor.getInventario()[numeroProducto]);
         
+
     }
-    
-    
-    
-    
-    
-    public void mostrarVendedor(){
+
+    public void mostrarVendedor() {
         vendedor.mostrarDatosPersonales();
-        System.out.println("\nPRODUCTOS: ");
         vendedor.mostrarProductos();
     }
-    
-    public void mostrarCliente(){
+
+    public void mostrarCliente() {
         cliente.mostrarDatosPersonales();
-        System.out.println("\nPRODUCTOS COMPRADOS");
         cliente.mostrarProductosCliente();
     }
-    
-    
-    
-    
-    
+
 }

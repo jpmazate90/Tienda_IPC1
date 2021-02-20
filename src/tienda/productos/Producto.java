@@ -10,7 +10,7 @@ package tienda.productos;
  * @author jpmazate
  */
 public class Producto {
-    
+
     private String nombre;
     private double precio;
     private String descripcion;
@@ -54,23 +54,18 @@ public class Producto {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
-    
-    
-    public void informacionGeneral(){
-        System.out.println("Producto: "+ nombre);
-        System.out.println("Precio: "+ precio);
-        System.out.println("Cantidad: "+cantidad);
-        System.out.println("Descripcion: "+ descripcion);
+
+    public void informacionGeneral() {
+        System.out.println("Producto: " + nombre);
+        System.out.println("Precio: " + precio);
+        System.out.println("Cantidad: " + cantidad);
+        System.out.println("Descripcion: " + descripcion);
     }
-    
-    public void mostrarInfoCliente(){
-        System.out.println("Producto: "+ nombre);
-        System.out.println("Precio: "+ precio);
-        System.out.println("Descripcion: "+ descripcion);
+
+    public void mostrarInfoCliente() {
+        System.out.println("Producto: " + nombre);
+        System.out.println("Precio: " + precio);
+        System.out.println("Descripcion: " + descripcion);
     }
-    
-    
-    
-        
+
 }

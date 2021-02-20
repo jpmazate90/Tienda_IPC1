@@ -49,9 +49,11 @@ public class Persona {
     
     
     public void mostrarDatosPersonales(){
+        System.out.println("--------- CLIENTE ---------------------");
         System.out.println("Nombre: "+this.nombre);
         System.out.println("Edad: "+this.edad);
         System.out.println("Dpi: "+this.dpi);
+        System.out.println("---------------------------------------");
     }
     
     
